@@ -60,14 +60,32 @@ Follow up: Could you minimize the total number of operations done?
     Time complexity: O(n)
     Space complexity: O(1)
 */
+// class Solution {
+// public:
+//     void moveZeroes(vector<int>& nums) {
+//         int j = 0;
+//         int l = nums.size();
+//         for (int i = 0; i < l; i++){
+//             if (nums[i]){
+//                 nums[j] = nums[i];
+//                 j++;
+//             }
+//         }
+//     }
+// };
+
+// THIRD TRY
+/*
+    ANALYSIS:
+    Time complexity: O(n)
+    Space complexity: O(1)
+*/
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        int j = 0;
-        int l = nums.size();
-        for (int i = 0; i < l; i++){
+        for (int i = 0, j = 0; i < nums.size(); i++){
             if (nums[i]){
-                nums[j] = nums[i];
+                swap(nums[i], nums[j]);
                 j++;
             }
         }
