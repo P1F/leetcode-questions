@@ -58,7 +58,7 @@ Follow up: Could you minimize the total number of operations done?
 /*
     ANALYSIS:
     Time complexity: O(n)
-    Space complexity: O(1)
+    Space complexity: O(1) Operation Sub-Optimal
 */
 // class Solution {
 // public:
@@ -78,7 +78,7 @@ Follow up: Could you minimize the total number of operations done?
 /*
     ANALYSIS:
     Time complexity: O(n)
-    Space complexity: O(1)
+    Space complexity: O(1) Operation Optimal
 */
 class Solution {
 public:
