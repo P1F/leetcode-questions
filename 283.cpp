@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 
@@ -37,12 +38,6 @@ Follow up: Could you minimize the total number of operations done?
 */
 // class Solution {
 // public:
-//     void swap(vector<int>&nums, int i, int j){
-//         int aux = nums[i];
-//         nums[i] = nums[j];
-//         nums[j] = aux;
-//     }
-
 //     void moveZeroes(vector<int>& nums) {
 //         int l = nums.size();
 //         if (l == 0 || l == 1) return;
@@ -50,7 +45,7 @@ Follow up: Could you minimize the total number of operations done?
 //         queue<int> q;
 //         for (int i = 0; i < l; i++){
 //             if (nums[i] != 0 && !q.empty()){
-//                 swap(nums, i, q.front());
+//                 swap(nums[i], nums[q.front()]);
 //                 q.pop();
 //             }
 //             if (nums[i] == 0)
@@ -76,8 +71,6 @@ public:
                 j++;
             }
         }
-        for (; j < l; j++)
-            nums[j] = 0;
     }
 };
 
