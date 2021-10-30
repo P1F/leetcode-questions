@@ -96,6 +96,33 @@ public:
     }
 };
 
+// BEST SOLUTION (One pass algorithm with start node)
+// ANALYSIS:
+// Time complexity - O(n)
+// Space complexity - O(1)
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode * start = new ListNode();
+        start -> next = head;
+        ListNode* fast = start;
+        ListNode* slow = start;     
+
+        for(int i = 1; i <= n; ++i)
+            fast = fast->next;
+    
+        while(fast->next)
+        {
+            fast = fast->next;
+            slow = slow->next;
+        }
+        
+        slow->next = slow->next->next;
+        
+        return start->next;
+    }
+};
+
 int main(){
     ListNode node5 = ListNode(5, nullptr);
     ListNode node4 = ListNode(4, &node5);
